@@ -10,6 +10,8 @@
 		CE37E2F81F5D62410093DA92 /* ReRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; };
 		CE37E2FD1F5D62410093DA92 /* ReRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E2FC1F5D62410093DA92 /* ReRouterTests.swift */; };
 		CE37E2FF1F5D62410093DA92 /* ReRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = CE37E2F11F5D62410093DA92 /* ReRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE37E30B1F5D732D0093DA92 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; };
+		CE37E30C1F5D732D0093DA92 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		CE37E2F71F5D62410093DA92 /* ReRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE37E2FC1F5D62410093DA92 /* ReRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReRouterTests.swift; sourceTree = "<group>"; };
 		CE37E2FE1F5D62410093DA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/iOS/ReactiveReSwift.framework; sourceTree = "<group>"; };
+		CE37E30A1F5D732D0093DA92 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE37E30B1F5D732D0093DA92 /* ReactiveReSwift.framework in Frameworks */,
+				CE37E30C1F5D732D0093DA92 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 				CE37E2F01F5D62410093DA92 /* ReRouter */,
 				CE37E2FB1F5D62410093DA92 /* ReRouterTests */,
 				CE37E2EF1F5D62410093DA92 /* Products */,
+				CE37E3081F5D732D0093DA92 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +91,15 @@
 				CE37E2FE1F5D62410093DA92 /* Info.plist */,
 			);
 			path = ReRouterTests;
+			sourceTree = "<group>";
+		};
+		CE37E3081F5D732D0093DA92 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */,
+				CE37E30A1F5D732D0093DA92 /* RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +347,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReRouter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -352,6 +372,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReRouter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
