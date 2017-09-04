@@ -12,6 +12,9 @@
 		CE37E2FF1F5D62410093DA92 /* ReRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = CE37E2F11F5D62410093DA92 /* ReRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE37E30B1F5D732D0093DA92 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; };
 		CE37E30C1F5D732D0093DA92 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
+		CE37E30E1F5D75220093DA92 /* ReactiveReSwiftBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E30D1F5D75220093DA92 /* ReactiveReSwiftBridge.swift */; };
+		CE37E30F1F5D76D50093DA92 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; };
+		CE37E3101F5D76D50093DA92 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 		CE37E2FE1F5D62410093DA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/iOS/ReactiveReSwift.framework; sourceTree = "<group>"; };
 		CE37E30A1F5D732D0093DA92 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		CE37E30D1F5D75220093DA92 /* ReactiveReSwiftBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveReSwiftBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE37E2F81F5D62410093DA92 /* ReRouter.framework in Frameworks */,
+				CE37E30F1F5D76D50093DA92 /* ReactiveReSwift.framework in Frameworks */,
+				CE37E3101F5D76D50093DA92 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				CE37E2F11F5D62410093DA92 /* ReRouter.h */,
+				CE37E30D1F5D75220093DA92 /* ReactiveReSwiftBridge.swift */,
 				CE37E2F21F5D62410093DA92 /* Info.plist */,
 			);
 			path = ReRouter;
@@ -165,6 +172,7 @@
 					CE37E2ED1F5D62410093DA92 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = VLLVL72AJ4;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					CE37E2F61F5D62410093DA92 = {
@@ -214,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE37E30E1F5D75220093DA92 /* ReactiveReSwiftBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +349,8 @@
 		CE37E3031F5D62410093DA92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VLLVL72AJ4;
@@ -358,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.warp.ReRouter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -365,7 +376,8 @@
 		CE37E3041F5D62410093DA92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VLLVL72AJ4;
@@ -390,9 +402,14 @@
 		CE37E3061F5D62410093DA92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VLLVL72AJ4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReRouterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.warp.ReRouterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -402,9 +419,14 @@
 		CE37E3071F5D62410093DA92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = VLLVL72AJ4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReRouterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.warp.ReRouterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
