@@ -18,7 +18,7 @@ struct RouteChange<Root: CoordinatorType> {
         let same = old.commonLength(with: new)
         remove = handler.remove(same: same)
         add = handler.add(path: new, same: same)
-        self.new = RouteHandler(root:handler.root, items: handler.items[0..<same] + add)
+        self.new = RouteHandler(root: handler.root, items: handler.items[0..<same] + add)
     }
 }
 
