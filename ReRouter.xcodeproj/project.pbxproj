@@ -21,6 +21,7 @@
 		CE37E31A1F5D96410093DA92 /* TestAnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E3191F5D96410093DA92 /* TestAnyCoordinator.swift */; };
 		CE37E31C1F5D9EFF0093DA92 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E31B1F5D9EFF0093DA92 /* Router.swift */; };
 		CE37E31E1F5DA06F0093DA92 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E31D1F5DA06F0093DA92 /* TestRouter.swift */; };
+		CE37E3201F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E31F1F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE37E3191F5D96410093DA92 /* TestAnyCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnyCoordinator.swift; sourceTree = "<group>"; };
 		CE37E31B1F5D9EFF0093DA92 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CE37E31D1F5DA06F0093DA92 /* TestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
+		CE37E31F1F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReactiveReSwiftBridge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				CE37E3171F5D908A0093DA92 /* TestPath.swift */,
 				CE37E3191F5D96410093DA92 /* TestAnyCoordinator.swift */,
 				CE37E31D1F5DA06F0093DA92 /* TestRouter.swift */,
+				CE37E31F1F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift */,
 				CE37E2FE1F5D62410093DA92 /* Info.plist */,
 			);
 			path = ReRouterTests;
@@ -254,6 +257,7 @@
 			files = (
 				CE37E3181F5D908A0093DA92 /* TestPath.swift in Sources */,
 				CE37E31A1F5D96410093DA92 /* TestAnyCoordinator.swift in Sources */,
+				CE37E3201F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift in Sources */,
 				CE37E31E1F5DA06F0093DA92 /* TestRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
