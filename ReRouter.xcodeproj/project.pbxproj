@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE37E2F81F5D62410093DA92 /* ReRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; };
-		CE37E2FD1F5D62410093DA92 /* ReRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E2FC1F5D62410093DA92 /* ReRouterTests.swift */; };
 		CE37E2FF1F5D62410093DA92 /* ReRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = CE37E2F11F5D62410093DA92 /* ReRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE37E30B1F5D732D0093DA92 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; };
 		CE37E30C1F5D732D0093DA92 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
@@ -36,7 +35,6 @@
 		CE37E2F11F5D62410093DA92 /* ReRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReRouter.h; sourceTree = "<group>"; };
 		CE37E2F21F5D62410093DA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE37E2F71F5D62410093DA92 /* ReRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE37E2FC1F5D62410093DA92 /* ReRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReRouterTests.swift; sourceTree = "<group>"; };
 		CE37E2FE1F5D62410093DA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveReSwift.framework; path = Carthage/Build/iOS/ReactiveReSwift.framework; sourceTree = "<group>"; };
 		CE37E30A1F5D732D0093DA92 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		CE37E2FB1F5D62410093DA92 /* ReRouterTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE37E2FC1F5D62410093DA92 /* ReRouterTests.swift */,
 				CE37E3171F5D908A0093DA92 /* TestPath.swift */,
 				CE37E2FE1F5D62410093DA92 /* Info.plist */,
 			);
@@ -246,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE37E3181F5D908A0093DA92 /* TestPath.swift in Sources */,
-				CE37E2FD1F5D62410093DA92 /* ReRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
