@@ -12,7 +12,7 @@ public protocol Routable {}
 
 public protocol CoordinatorType: Routable {
     associatedtype Key: PathIdentifier
-    func item(for identifier: Key) -> NavigationItem
+    func item(for key: Key) -> NavigationItem
 }
 
 public protocol PathIdentifier {

@@ -16,9 +16,9 @@ private struct Coordinator: CoordinatorType, Equatable {
     
     let id: Int
     
-    func item(for identifier: Key) -> NavigationItem {
+    func item(for key: Key) -> NavigationItem {
         let newId: Int
-        switch identifier {
+        switch key {
         case .test:
             newId = id + 1
         case .other:
