@@ -17,6 +17,8 @@
 		CE37E3101F5D76D50093DA92 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
 		CE37E3121F5D7F380093DA92 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E3111F5D7F380093DA92 /* Routable.swift */; };
 		CE37E3141F5D87300093DA92 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E3131F5D87300093DA92 /* AnyCoordinator.swift */; };
+		CE37E3161F5D8CED0093DA92 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E3151F5D8CED0093DA92 /* Path.swift */; };
+		CE37E3181F5D908A0093DA92 /* TestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E3171F5D908A0093DA92 /* TestPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		CE37E30D1F5D75220093DA92 /* ReactiveReSwiftBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveReSwiftBridge.swift; sourceTree = "<group>"; };
 		CE37E3111F5D7F380093DA92 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		CE37E3131F5D87300093DA92 /* AnyCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
+		CE37E3151F5D8CED0093DA92 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		CE37E3171F5D908A0093DA92 /* TestPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			children = (
 				CE37E2F11F5D62410093DA92 /* ReRouter.h */,
 				CE37E3111F5D7F380093DA92 /* Routable.swift */,
+				CE37E3151F5D8CED0093DA92 /* Path.swift */,
 				CE37E3131F5D87300093DA92 /* AnyCoordinator.swift */,
 				CE37E30D1F5D75220093DA92 /* ReactiveReSwiftBridge.swift */,
 				CE37E2F21F5D62410093DA92 /* Info.plist */,
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				CE37E2FC1F5D62410093DA92 /* ReRouterTests.swift */,
+				CE37E3171F5D908A0093DA92 /* TestPath.swift */,
 				CE37E2FE1F5D62410093DA92 /* Info.plist */,
 			);
 			path = ReRouterTests;
@@ -230,6 +236,7 @@
 			files = (
 				CE37E3141F5D87300093DA92 /* AnyCoordinator.swift in Sources */,
 				CE37E30E1F5D75220093DA92 /* ReactiveReSwiftBridge.swift in Sources */,
+				CE37E3161F5D8CED0093DA92 /* Path.swift in Sources */,
 				CE37E3121F5D7F380093DA92 /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE37E3181F5D908A0093DA92 /* TestPath.swift in Sources */,
 				CE37E2FD1F5D62410093DA92 /* ReRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
