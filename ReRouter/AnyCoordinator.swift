@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct AnyIdentifier: RouteIdentifier {
-    let base: RouteIdentifier
+struct AnyIdentifier: PathIdentifier {
+    let base: PathIdentifier
     
-    init(_ base: RouteIdentifier) {
+    init(_ base: PathIdentifier) {
         self.base = base
     }
     
-    func isEqual(to other: RouteIdentifier) -> Bool {
+    func isEqual(to other: PathIdentifier) -> Bool {
         return base.isEqual(to: other)
     }
 }

@@ -11,18 +11,18 @@ import RxSwift
 public protocol Routable {}
 
 public protocol CoordinatorType: Routable {
-    associatedtype Key: RouteIdentifier
+    associatedtype Key: PathIdentifier
     func item(for identifier: Key) -> NavigationItem
 }
 
-public protocol RouteIdentifier {
-    func isEqual(to other: RouteIdentifier) -> Bool
+public protocol PathIdentifier {
+    func isEqual(to other: PathIdentifier) -> Bool
 }
 
-public protocol RouteKey: Equatable, RouteIdentifier {}
+public protocol PathKey: Equatable, PathIdentifier {}
 
-public extension RouteIdentifier where Self: Equatable {
-    public func isEqual(to other: RouteIdentifier) -> Bool {
+public extension PathIdentifier where Self: Equatable {
+    public func isEqual(to other: PathIdentifier) -> Bool {
         guard let otherRoute = other as? Self else { return false }
         return self == otherRoute
     }
