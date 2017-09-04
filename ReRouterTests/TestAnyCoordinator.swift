@@ -9,7 +9,7 @@
 import XCTest
 @testable import ReRouter
 
-private struct Coordinator: CoordinatorType, Equatable {
+struct Coordinator: CoordinatorType, Equatable {
     enum Key: PathKey {
         case test, other
     }
