@@ -6,7 +6,8 @@
 //  Copyright © 2017 WeAreReasonablePeople. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import ReactiveReSwift
 
 struct RouteChange<Root: CoordinatorType> {
     let remove: [NavigationItem]
@@ -37,5 +38,34 @@ struct RouteHandler<Root: CoordinatorType> {
                 let new = item.0!.item(for: current)
                 return (new.target as? AnyCoordinator, item.1 + [new])
             }).1
+    }
+}
+
+public final class NavigationRouter<Root: CoordinatorType, State: NavigatableState> where Root.Key == State.Initial {
+    let store: Store<Variable<State>>
+    let disposeBag = DisposeBag()
+    var handler: RouteHandler<Root>
+    
+    init(_ root: Root, store: Store<Variable<State>>) {
+        self.store = store
+        handler = RouteHandler(root: root, items: [])
+    }
+    
+    func setupUpdate() {
+        store.observable
+            .asObservable()
+            .map({ $0.path })
+            .distinctUntilChanged()
+            .scan((Path([]), Path([])), accumulator: { ($0.1, $1) })
+            .map({ [unowned self] in RouteChange(handler: self.handler, old: $0.0, new: $0.1) })
+            .do(onNext: { [unowned self] in self.handler = $0.new })
+            .map({ change -> [Observable<Void>] in
+                let remove = change.remove.reversed().map({ $0.action(for: .pop, animated: true) })
+                let add = change.add.map({ $0.action(for: .push, animated: true) })
+                return remove + add
+            })
+            .flatMap({ Observable.concat($0) })
+            .subscribe()
+            .disposed(by: disposeBag)
     }
 }
