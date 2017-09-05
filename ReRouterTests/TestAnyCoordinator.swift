@@ -24,7 +24,7 @@ struct Coordinator: CoordinatorType, Equatable {
         case .other:
             newId = id + 2
         }
-        return NavigationItem(self, Coordinator(id: newId), push: { _ in }, pop: { _ in })
+        return NavigationItem(self, Coordinator(id: newId), push: { $0.3() }, pop: { $0.3() })
     }
     
     static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {

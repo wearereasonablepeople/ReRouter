@@ -20,6 +20,12 @@ struct RouteChange<Root: CoordinatorType> {
         add = handler.add(path: new, same: same)
         self.new = RouteHandler(root: handler.root, items: handler.items[0..<same] + add)
     }
+    
+    var toObservables: [Observable<Void>] {
+        let remove = self.remove.reversed().map({ $0.action(for: .pop, animated: true) })
+        let add = self.add.map({ $0.action(for: .push, animated: true) })
+        return remove + add
+    }
 }
 
 struct RouteHandler<Root: CoordinatorType> {
@@ -61,11 +67,7 @@ public final class NavigationRouter<Root: CoordinatorType, State: NavigatableSta
             .scan((Path([]), Path([])), accumulator: { ($0.1, $1) })
             .map({ [unowned self] in RouteChange(handler: self.handler, old: $0.0, new: $0.1) })
             .do(onNext: { [unowned self] in self.handler = $0.new })
-            .map({ change -> [Observable<Void>] in
-                let remove = change.remove.reversed().map({ $0.action(for: .pop, animated: true) })
-                let add = change.add.map({ $0.action(for: .push, animated: true) })
-                return remove + add
-            })
+            .map({ $0.toObservables })
             .flatMap({ Observable.concat($0) })
             .subscribe()
             .disposed(by: disposeBag)

@@ -54,8 +54,8 @@ class TestRoutable: XCTestCase {
             completion()
         })
         
-        let dispThree = otherItem.action(for: .push, animated: true).subscribe(onNext: { otherPushExpectation.fulfill() })
-        let dispFour = otherItem.action(for: .pop, animated: true).subscribe(onNext: { otherPopExpectation.fulfill() })
+        let dispThree = otherItem.action(for: .push, animated: true).subscribe(onCompleted: { otherPushExpectation.fulfill() })
+        let dispFour = otherItem.action(for: .pop, animated: true).subscribe(onCompleted: { otherPopExpectation.fulfill() })
         
         waitForExpectations(timeout: 2.0)
         dispFirst.dispose()
