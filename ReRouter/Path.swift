@@ -24,20 +24,24 @@ public struct Path<Initial: PathIdentifier>: Equatable {
         self.sequence = sequence
     }
     
+    /// Add path id. Complexity: O(1)
     public mutating func append<T: PathIdentifier>(_ id: T) {
         sequence.append(id)
     }
     
+    /// Remove last path id. Complexity: O(1)
     public mutating func removeLast() {
         sequence.removeLast()
     }
     
+    /// Create new path with additional element. Complexity: O(n)
     public func push<T: PathIdentifier>(_ id: T) -> Path<Initial> {
         var new = self
         new.append(id)
         return new
     }
     
+    /// Create new path without last element. Complexity: O(n)
     public func dropLast() -> Path<Initial> {
         var new = self
         new.removeLast()
