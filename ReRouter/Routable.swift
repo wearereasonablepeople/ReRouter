@@ -63,3 +63,5 @@ public struct NavigationItem {
         })
     }
 }
+
+extension UIViewController: Routable {}
