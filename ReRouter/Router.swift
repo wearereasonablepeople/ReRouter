@@ -59,7 +59,7 @@ public final class NavigationRouter<Root: CoordinatorType, State: NavigatableSta
         handler = RouteHandler(root: root, items: [])
     }
     
-    func setupUpdate() {
+    public func setupUpdate() {
         store.observable
             .asObservable()
             .map({ $0.path })
