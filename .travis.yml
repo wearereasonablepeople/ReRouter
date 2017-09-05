@@ -1,0 +1,21 @@
+language: objective-c
+osx_image: xcode8.3
+
+cache:
+  directories:
+  - Carthage
+
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - carthage bootstrap --verbose --platform iOS --no-use-binaries --cache-builds
+
+script:
+  - open -a "simulator" --args -CurrentDeviceUDID EEE357DD-82EF-43B5-AABC-27E3B59DB403
+  - xcodebuild clean build test -project ReRouter.xcodeproj -scheme ReRouter -destination 'platform=iOS Simulator,OS=10.3.1,id=EEE357DD-82EF-43B5-AABC-27E3B59DB403'
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email: true
