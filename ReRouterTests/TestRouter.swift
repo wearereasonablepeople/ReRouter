@@ -38,8 +38,18 @@ class TestRouter: XCTestCase {
     }
     
     func testNavigationChange() {
-        let items = self.items(upto: 3)
-        let handler = RouteHandler(root: Coordinator(id: 1), items: items)
+        var result: [String] = []
+        let push: (Bool, Coordinator, Coordinator) -> Void = { result.append("push \($0.2.id)") }
+        let pop: (Bool, Coordinator, Coordinator) -> Void = { result.append("pop \($0.2.id)") }
+        
+        func createItems(upto max: Int) -> [NavigationItem] {
+            return (1...max).map({
+                NavigationItem(Coordinator(id: $0, push: push, pop: pop), Coordinator(id: $0 + 1, push: push, pop: pop), push: Coordinator.push, pop: Coordinator.pop)
+            })
+        }
+        
+        let items = createItems(upto: 3)
+        let handler = RouteHandler(root: Coordinator(id: 1, push: push, pop: pop), items: items)
         let test = Coordinator.Key.test
         let other = Coordinator.Key.other
         
@@ -52,12 +62,25 @@ class TestRouter: XCTestCase {
         XCTAssertEqual(changeOne.new.items.map({ $0.source.unsafeCast() as Coordinator }), [1, 2, 3, 5].map(Coordinator.init))
         XCTAssertEqual(changeOne.toObservables.count, 3)
         
+        let expectOne = expectation(description: "OneExpectation")
+        let disposableOne = Observable.concat(changeOne.toObservables).subscribe(onCompleted: { expectOne.fulfill() })
+        waitForExpectations(timeout: 2.0)
+        disposableOne.dispose()
+        XCTAssertEqual(result, ["pop 4", "push 5", "push 7"])
+        
         let newTwo = Path<Coordinator.Key>([test, test, test, other])
         let changeTwo = RouteChange(handler: handler, old: old, new: newTwo)
         XCTAssertEqual(changeTwo.remove.count, 0)
         XCTAssertEqual(changeTwo.add.map({ $0.source.unsafeCast() as Coordinator }), [4].map(Coordinator.init))
         XCTAssertEqual(changeTwo.new.items.map({ $0.source.unsafeCast() as Coordinator }), [1, 2, 3, 4].map(Coordinator.init))
         XCTAssertEqual(changeTwo.toObservables.count, 1)
+        
+        result = []
+        let expectTwo = expectation(description: "TwoExpectation")
+        let disposableTwo = Observable.concat(changeTwo.toObservables).subscribe(onCompleted: { expectTwo.fulfill() })
+        waitForExpectations(timeout: 2.0)
+        disposableTwo.dispose()
+        XCTAssertEqual(result, ["push 6"])
         
         let newThree = Path<Coordinator.Key>([test])
         let changeThree = RouteChange(handler: handler, old: old, new: newThree)
@@ -72,6 +95,13 @@ class TestRouter: XCTestCase {
         XCTAssertEqual(changeFour.add.map({ $0.source.unsafeCast() as Coordinator }), [1, 3, 5].map(Coordinator.init))
         XCTAssertEqual(changeFour.new.items.map({ $0.source.unsafeCast() as Coordinator }), [1, 3, 5].map(Coordinator.init))
         XCTAssertEqual(changeFour.toObservables.count, 6)
+        
+        result = []
+        let expectFour = expectation(description: "FourExpectation")
+        let disposableFour = Observable.concat(changeFour.toObservables).subscribe(onCompleted: { expectFour.fulfill() })
+        waitForExpectations(timeout: 2.0)
+        disposableFour.dispose()
+        XCTAssertEqual(result, ["pop 4", "pop 3", "pop 2", "push 3", "push 5", "push 7"])
     }
     
 }

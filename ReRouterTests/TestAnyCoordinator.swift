@@ -18,6 +18,16 @@ struct Coordinator: CoordinatorType, Equatable {
     let push: (Bool, Coordinator, Coordinator) -> Void
     let pop: (Bool, Coordinator, Coordinator) -> Void
     
+    static let push: (Bool, Coordinator, Coordinator, @escaping () -> Void) -> Void = { (animated, source, target, completion) in
+        source.push(animated, source, target)
+        completion()
+    }
+    
+    static let pop: (Bool, Coordinator, Coordinator, @escaping () -> Void) -> Void = { (animated, source, target, completion) in
+        source.pop(animated, source, target)
+        completion()
+    }
+    
     init(id: Int, push: @escaping (Bool, Coordinator, Coordinator) -> Void, pop: @escaping (Bool, Coordinator, Coordinator) -> Void) {
         self.id = id
         self.push = push
@@ -36,15 +46,7 @@ struct Coordinator: CoordinatorType, Equatable {
         case .test: newId = id + 1
         case .other: newId = id + 2
         }
-        
-        let other = Coordinator(id: newId, push: push, pop: pop)
-        return NavigationItem(self, other, push: { (animated, source, target, completion) in
-            source.push(animated, source, target)
-            completion()
-        }, pop: { (animated, source, target, completion) in
-            source.pop(animated, source, target)
-            completion()
-        })
+        return NavigationItem(self, Coordinator(id: newId, push: push, pop: pop), push: Coordinator.push, pop: Coordinator.pop)
     }
     
     static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
