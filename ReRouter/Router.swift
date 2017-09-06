@@ -38,14 +38,16 @@ struct RouteHandler<Root: CoordinatorType> {
     
     func add(path: Path<Root.Key>, same: Int) -> [NavigationItem] {
         let initial = same > 0 ? items[same - 1].target as! AnyCoordinator : AnyCoordinator(root)
-        return path
-            .sequence[same..<path.sequence.count]
-            .lazy
-            .map(AnyIdentifier.init)
-            .reduce((Optional.some(initial), [NavigationItem]()), { (item, current) in
-                let new = item.0!.item(for: current)
-                return (new.target as? AnyCoordinator, item.1 + [new])
-            }).1
+        var result = [NavigationItem]()
+        _ = path.sequence[same..<path.sequence.count]
+            .lazy.map(AnyIdentifier.init)
+            .reduce(initial as Routable, { (item, current) in
+                let new = (item as! AnyCoordinator).item(for: current)
+                result.append(new)
+                return new.target
+            })
+        
+        return result
     }
 }
 
