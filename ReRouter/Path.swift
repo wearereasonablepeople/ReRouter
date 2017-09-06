@@ -55,8 +55,16 @@ public struct Path<Initial: PathIdentifier>: Equatable {
         }).1
     }
     
+    /// Check the equality of 2 paths. Complexity: O(n)
     public static func == (lhs: Path<Initial>, rhs: Path<Initial>) -> Bool {
-        return lhs.sequence.count == rhs.sequence.count
-            && zip(lhs.sequence, rhs.sequence).reduce(true, { $0.0 && $0.1.0.isEqual(to: $0.1.1) })
+        guard lhs.sequence.count == rhs.sequence.count else { return false }
+        
+        for (left, right) in zip(lhs.sequence, rhs.sequence) {
+            if left.isEqual(to: right) == false {
+                return false
+            }
+        }
+        
+        return true
     }
 }
