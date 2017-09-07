@@ -103,6 +103,10 @@ class TestRouter: XCTestCase {
         waitForExpectations(timeout: 2.0)
         disposableFour.dispose()
         XCTAssertEqual(result, ["pop 4", "pop 3", "pop 2", "push 3", "push 5", "push 7"])
+        
+        
+        XCTAssertTrue(RouteChange(handler: handler, old: old, new: old).isEmpty)
+        XCTAssertFalse(changeOne.isEmpty)
     }
     
     func testRouter() {
@@ -117,6 +121,7 @@ class TestRouter: XCTestCase {
         let successExpectation = expectation(description: "RouteExpectation")
         
         router.setupUpdate()
+        mainStore.observable.value.path = Path(.other)
         mainStore.observable.value.path = Path(.test).push(Coordinator.Key.other).push(Coordinator.Key.other)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
