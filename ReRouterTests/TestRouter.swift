@@ -103,6 +103,10 @@ class TestRouter: XCTestCase {
         waitForExpectations(timeout: 2.0)
         disposableFour.dispose()
         XCTAssertEqual(result, ["pop 4", "pop 3", "pop 2", "push 3", "push 5", "push 7"])
+        
+        
+        XCTAssertTrue(RouteChange(handler: handler, old: old, new: old).isEmpty)
+        XCTAssertFalse(changeOne.isEmpty)
     }
     
     func testRouter() {

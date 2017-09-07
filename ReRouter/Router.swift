@@ -26,6 +26,10 @@ struct RouteChange<Root: CoordinatorType> {
         let add = self.add.map({ $0.action(for: .push, animated: true) })
         return remove + add
     }
+    
+    var isEmpty: Bool {
+        return remove.isEmpty && add.isEmpty
+    }
 }
 
 struct RouteHandler<Root: CoordinatorType> {
