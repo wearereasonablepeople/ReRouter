@@ -44,13 +44,15 @@ class TestRoutable: XCTestCase {
             popExpectation.fulfill()
         })
         
-        let otherItem = NavigationItem(coord, otherCoordinator, push: { (_, source, target, completion) in
+        let otherItem = NavigationItem(coord, otherCoordinator, push: { (animated, source, target, completion) in
             XCTAssertEqual(source, coord)
             XCTAssertEqual(target, otherCoordinator)
+            source.push(animated, source, target)
             completion()
-        }, pop: { (_, source, target, completion) in
+        }, pop: { (animated, source, target, completion) in
             XCTAssertEqual(source, coord)
             XCTAssertEqual(target, otherCoordinator)
+            source.pop(animated, source, target)
             completion()
         })
         
