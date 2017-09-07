@@ -20,7 +20,7 @@ public struct Path<Initial: PathIdentifier>: Equatable {
         sequence = [initial]
     }
     
-    public init(_ sequence: [PathIdentifier]) {
+    public init(_ sequence: [PathIdentifier] = []) {
         self.sequence = sequence
     }
     

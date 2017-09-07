@@ -66,7 +66,7 @@ public final class NavigationRouter<Root: CoordinatorType, State: NavigatableSta
             .asObservable()
             .map({ $0.path })
             .distinctUntilChanged()
-            .scan((Path([]), Path([])), accumulator: { ($0.1, $1) })
+            .scan((Path(), Path()), accumulator: { ($0.1, $1) })
             .map({ [unowned self] in RouteChange(handler: self.handler, old: $0.0, new: $0.1) })
             .do(onNext: { [unowned self] in self.handler = $0.new })
             .map({ $0.toObservables })
