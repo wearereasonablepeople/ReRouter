@@ -69,9 +69,9 @@ public final class NavigationRouter<Root: CoordinatorType, State: NavigatableSta
         store.observable
             .asObservable()
             .map({ $0.path })
-            .distinctUntilChanged()
             .scan((Path(), Path()), accumulator: { ($0.1, $1) })
             .map({ [unowned self] in RouteChange(handler: self.handler, old: $0.0, new: $0.1) })
+            .filter({ $0.isEmpty == false })
             .do(onNext: { [unowned self] in self.handler = $0.new })
             .map({ $0.toObservables })
             .flatMap({ Observable.concat($0) })

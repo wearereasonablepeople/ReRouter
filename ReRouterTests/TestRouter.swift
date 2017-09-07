@@ -121,6 +121,7 @@ class TestRouter: XCTestCase {
         let successExpectation = expectation(description: "RouteExpectation")
         
         router.setupUpdate()
+        mainStore.observable.value.path = Path(.other)
         mainStore.observable.value.path = Path(.test).push(Coordinator.Key.other).push(Coordinator.Key.other)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
