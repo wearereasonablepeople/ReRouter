@@ -8,6 +8,7 @@
 
 import XCTest
 import RxSwift
+import ReactiveReSwift
 @testable import ReRouter
 
 class TestRouter: XCTestCase {
@@ -104,4 +105,25 @@ class TestRouter: XCTestCase {
         XCTAssertEqual(result, ["pop 4", "pop 3", "pop 2", "push 3", "push 5", "push 7"])
     }
     
+    func testRouter() {
+        struct State: NavigatableState {
+            var path = Path<Coordinator.Key>(.other)
+        }
+        
+        var result: [String] = []
+        let root = Coordinator(id: 1, push: { result.append("push \($0.2.id)") }, pop: { result.append("pop \($0.2.id)") })
+        let mainStore = Store(reducer: { $0.1 }, observable: Variable(State()))
+        let router = NavigationRouter(root, store: mainStore)
+        let successExpectation = expectation(description: "RouteExpectation")
+        
+        router.setupUpdate()
+        mainStore.observable.value.path = Path(.test).push(Coordinator.Key.other).push(Coordinator.Key.other)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            XCTAssertEqual(result, ["push 3", "pop 3", "push 2", "push 4", "push 6"])
+            successExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 2.0)
+    }
 }
