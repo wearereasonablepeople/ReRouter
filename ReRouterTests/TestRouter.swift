@@ -40,8 +40,15 @@ class TestRouter: XCTestCase {
     
     func testNavigationChange() {
         var result: [String] = []
-        let push: (Bool, Coordinator, Coordinator) -> Void = { result.append("push \($0.2.id)") }
-        let pop: (Bool, Coordinator, Coordinator) -> Void = { result.append("pop \($0.2.id)") }
+        let trans: (Bool) -> (Bool, Coordinator, Coordinator) -> Void = { push in
+            return { animated, source, target in
+                let type = push ? "push" : "pop"
+                let anim = animated ? "anim" : "non-anim"
+                result.append("\(type) \(target.id) \(anim)")
+            }
+        }
+        let push = trans(true)
+        let pop = trans(false)
         
         func createItems(upto max: Int) -> [NavigationItem] {
             return (1...max).map({
@@ -68,7 +75,7 @@ class TestRouter: XCTestCase {
         let disposableOne = Observable.concat(changeOne.toObservables).subscribe(onCompleted: { expectOne.fulfill() })
         waitForExpectations(timeout: 2.0)
         disposableOne.dispose()
-        XCTAssertEqual(result, ["pop 4", "push 5", "push 7"])
+        XCTAssertEqual(result, ["pop 4 non-anim", "push 5 non-anim", "push 7 non-anim"])
         
         let newTwo = Path<Coordinator.Key>([test, test, test, other])
         let changeTwo = RouteChange(handler: handler, old: old, new: newTwo)
@@ -83,7 +90,7 @@ class TestRouter: XCTestCase {
         let disposableTwo = Observable.concat(changeTwo.toObservables).subscribe(onCompleted: { expectTwo.fulfill() })
         waitForExpectations(timeout: 2.0)
         disposableTwo.dispose()
-        XCTAssertEqual(result, ["push 6"])
+        XCTAssertEqual(result, ["push 6 anim"])
         
         let newThree = Path<Coordinator.Key>([test])
         let changeThree = RouteChange(handler: handler, old: old, new: newThree)
@@ -104,7 +111,7 @@ class TestRouter: XCTestCase {
         let disposableFour = Observable.concat(changeFour.toObservables).subscribe(onCompleted: { expectFour.fulfill() })
         waitForExpectations(timeout: 2.0)
         disposableFour.dispose()
-        XCTAssertEqual(result, ["pop 4", "pop 3", "pop 2", "push 3", "push 5", "push 7"])
+        XCTAssertEqual(result, ["pop 4 non-anim", "pop 3 non-anim", "pop 2 non-anim", "push 3 non-anim", "push 5 non-anim", "push 7 non-anim"])
         
         
         XCTAssertTrue(RouteChange(handler: handler, old: old, new: old).isEmpty)
