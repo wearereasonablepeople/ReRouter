@@ -54,8 +54,10 @@ private final class _AnyCoordinatorConcreteBox<V: CoordinatorType>: _AnyCoordina
     }
     
     override func item(for identifier: AnyIdentifier) -> NavigationItem {
-        guard let identifier = identifier.base as? V.Key else { fatalError("Wrong identifier") }
-        return base.item(for: identifier)
+        guard let id = identifier.base as? V.Key else {
+            fatalError("Coordinator \"\(String(describing: V.self))\" cannot handle key \"\(String(reflecting: identifier.base))\"")
+        }
+        return base.item(for: id)
     }
     
     override func unsafeCast<T : CoordinatorType>() -> T {
