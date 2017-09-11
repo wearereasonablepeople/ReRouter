@@ -22,13 +22,17 @@ struct RouteChange<Root: CoordinatorType> {
     }
     
     var toObservables: [Observable<Void>] {
-        let remove = self.remove.reversed().map({ $0.action(for: .pop, animated: true) })
-        let add = self.add.map({ $0.action(for: .push, animated: true) })
+        let remove = self.remove.reversed().map({ $0.action(for: .pop, animated: isAnimated) })
+        let add = self.add.map({ $0.action(for: .push, animated: isAnimated) })
         return remove + add
     }
     
     var isEmpty: Bool {
         return remove.isEmpty && add.isEmpty
+    }
+    
+    var isAnimated: Bool {
+        return (remove.count + add.count) == 1
     }
 }
 

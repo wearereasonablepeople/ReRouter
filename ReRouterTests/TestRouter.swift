@@ -62,6 +62,7 @@ class TestRouter: XCTestCase {
         XCTAssertEqual(changeOne.add.map({ $0.source.unsafeCast() as Coordinator }), [3, 5].map(Coordinator.init))
         XCTAssertEqual(changeOne.new.items.map({ $0.source.unsafeCast() as Coordinator }), [1, 2, 3, 5].map(Coordinator.init))
         XCTAssertEqual(changeOne.toObservables.count, 3)
+        XCTAssertFalse(changeOne.isAnimated)
         
         let expectOne = expectation(description: "OneExpectation")
         let disposableOne = Observable.concat(changeOne.toObservables).subscribe(onCompleted: { expectOne.fulfill() })
@@ -75,6 +76,7 @@ class TestRouter: XCTestCase {
         XCTAssertEqual(changeTwo.add.map({ $0.source.unsafeCast() as Coordinator }), [4].map(Coordinator.init))
         XCTAssertEqual(changeTwo.new.items.map({ $0.source.unsafeCast() as Coordinator }), [1, 2, 3, 4].map(Coordinator.init))
         XCTAssertEqual(changeTwo.toObservables.count, 1)
+        XCTAssertTrue(changeTwo.isAnimated)
         
         result = []
         let expectTwo = expectation(description: "TwoExpectation")
