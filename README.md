@@ -21,10 +21,10 @@ There are 3 main components in Router:
 
 The actual navigation is done in coordinators. Coordinator is not a new concept and [here](https://vimeo.com/144116310) is a great introduction to it. In ReReouter Coordinators provide 2 things: enum `Key` which you can think of as a Path Item and a method of how to perform the navigation for a give `Key`.
 
-Here's an example of Coordinator:
+Here's an example of `Coordinator`:
 
 ```swift
-struct _Coordinator: CoordinatorType {
+struct Coordinator: CoordinatorType {
     enum Key: PathKey {
         case presentOther, pushOther
     }
