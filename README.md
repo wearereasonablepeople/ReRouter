@@ -24,7 +24,7 @@ The actual navigation is done in coordinators. Coordinator is not a new concept 
 Here's an example of `Coordinator`:
 
 ```swift
-struct Coordinator: CoordinatorType {
+final class Coordinator: CoordinatorType {
     enum Key: PathKey {
         case presentOther, pushOther
     }
@@ -53,3 +53,12 @@ struct Coordinator: CoordinatorType {
     }
 }
 ```
+
+As you can see, the in method `func item(for key: Key) -> NavigationItem` we have to return `NavigationItem`. NavigationItem is a Type that incapsulates the transition to the next coordinator or view controller.
+
+`NavigationItem` contains of 4 things:
+
+1. `Source` is the coordinator that initiates the transition. It's always `self`.
+2. `Target` - this is the next coordinator or `UIViewController` that needs to be presented. In general, anything that conforms to protocol `Routable` can be the target
+3. `Push` function. Here we actually perform the transition to `Target`. Animated property indicates whether the transition should be animated. We have to call the completion once the transition is done.
+4. `Pop` function. Here we perform the transition back to `Source` from `Target`. Animated property indicates whether the transition should be animated. We have to call the completion once the transition is done.
