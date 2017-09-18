@@ -116,6 +116,13 @@ class TestRouter: XCTestCase {
         
         XCTAssertTrue(RouteChange(handler: handler, old: old, new: old).isEmpty)
         XCTAssertFalse(changeOne.isEmpty)
+        
+        let controllerPath = old.push(Coordinator.Key.push)
+        let controllerHandler = RouteChange(handler: handler, old: old, new: old.push(Coordinator.Key.push)).new
+        let controllerChange = RouteChange(handler: controllerHandler, old: controllerPath, new: controllerPath)
+        
+        XCTAssertTrue(controllerChange.add.isEmpty)
+        XCTAssertTrue(controllerChange.remove.isEmpty)
     }
     
     func testRouter() {

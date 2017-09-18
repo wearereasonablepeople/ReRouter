@@ -11,7 +11,7 @@ import XCTest
 
 struct Coordinator: CoordinatorType, Equatable {
     enum Key: PathKey {
-        case test, other
+        case test, other, push
     }
     
     let id: Int
@@ -45,6 +45,8 @@ struct Coordinator: CoordinatorType, Equatable {
         switch key {
         case .test: newId = id + 1
         case .other: newId = id + 2
+        case .push:
+            return NavigationItem(self, UIViewController(), push: { $0.3() }, pop: { $0.3() })
         }
         return NavigationItem(self, Coordinator(id: newId, push: push, pop: pop), push: Coordinator.push, pop: Coordinator.pop)
     }
