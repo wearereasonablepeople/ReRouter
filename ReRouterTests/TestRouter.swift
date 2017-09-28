@@ -13,7 +13,7 @@ import ReactiveReSwift
 
 class TestRouter: XCTestCase {
     
-    fileprivate let transition: (Bool, Coordinator, Coordinator, @escaping () -> Void) -> Void = { _ in }
+    fileprivate let transition: (Bool, Coordinator, Coordinator, @escaping () -> Void) -> Void = { _,_,_,_  in }
     
     func items(upto max: Int) -> [NavigationItem] {
         return (1...max).map({
@@ -131,8 +131,8 @@ class TestRouter: XCTestCase {
         }
         
         var result: [String] = []
-        let root = Coordinator(id: 1, push: { result.append("push \($0.2.id)") }, pop: { result.append("pop \($0.2.id)") })
-        let mainStore = Store(reducer: { $0.1 }, observable: Variable(State()))
+        let root = Coordinator(id: 1, push: { result.append("push \($2.id)") }, pop: { result.append("pop \($2.id)") })
+        let mainStore = Store(reducer: { $1 }, observable: Variable(State()))
         let router = NavigationRouter(root, store: mainStore)
         let successExpectation = expectation(description: "RouteExpectation")
         
