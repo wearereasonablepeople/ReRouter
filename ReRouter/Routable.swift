@@ -41,22 +41,22 @@ public struct NavigationItem {
     public init<S: CoordinatorType, T: Routable>(_ source: S, _ target: T, push: @escaping ((Bool, S, T, @escaping () -> Void) -> Void), pop: @escaping (Bool, S, T, @escaping () -> Void) -> Void) {
         self.source = AnyCoordinator(source)
         self.target = target
-        self.push = { push($0.0, $0.1.unsafeCast(), $0.2 as! T, $0.3) }
-        self.pop = { pop($0.0, $0.1.unsafeCast(), $0.2 as! T, $0.3) }
+        self.push = { push($0, $1.unsafeCast(), $2 as! T, $3) }
+        self.pop = { pop($0, $1.unsafeCast(), $2 as! T, $3) }
     }
     
     public init<S: CoordinatorType, T: CoordinatorType>(_ source: S, _ target: T, push: @escaping ((Bool, S, T, @escaping () -> Void) -> Void), pop: @escaping ((Bool, S, T, @escaping () -> Void) -> Void)) {
         self.source = AnyCoordinator(source)
         self.target = AnyCoordinator(target)
-        self.push = { push($0.0, $0.1.unsafeCast(), ($0.2 as! AnyCoordinator).unsafeCast(), $0.3) }
-        self.pop = { pop($0.0, $0.1.unsafeCast(), ($0.2 as! AnyCoordinator).unsafeCast(), $0.3) }
+        self.push = { push($0, $1.unsafeCast(), ($2 as! AnyCoordinator).unsafeCast(), $3) }
+        self.pop = { pop($0, $1.unsafeCast(), ($2 as! AnyCoordinator).unsafeCast(), $3) }
     }
     
     func action(for actionType: ActionType, animated: Bool) -> Observable<Void> {
         let action = actionType == .push ? push: pop
         return .create({ observer -> Disposable in
             action(animated, self.source, self.target, {
-                observer.onNext()
+                observer.onNext(())
                 observer.onCompleted()
             })
             return Disposables.create()

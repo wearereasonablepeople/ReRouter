@@ -36,8 +36,8 @@ struct Coordinator: CoordinatorType, Equatable {
     
     init(id: Int) {
         self.id = id
-        push = { _ in }
-        pop = { _ in }
+        push = { _,_,_  in }
+        pop = { _,_,_  in }
     }
     
     func item(for key: Key) -> NavigationItem {
@@ -46,7 +46,7 @@ struct Coordinator: CoordinatorType, Equatable {
         case .test: newId = id + 1
         case .other: newId = id + 2
         case .push:
-            return NavigationItem(self, UIViewController(), push: { $0.3() }, pop: { $0.3() })
+            return NavigationItem(self, UIViewController(), push: { $3() }, pop: { $3() })
         }
         return NavigationItem(self, Coordinator(id: newId, push: push, pop: pop), push: Coordinator.push, pop: Coordinator.pop)
     }
