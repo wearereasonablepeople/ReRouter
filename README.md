@@ -62,3 +62,39 @@ As you can see, the in method `func item(for key: Key) -> NavigationItem` we hav
 2. `Target` - this is the next coordinator or `UIViewController` that needs to be presented. In general, anything that conforms to protocol `Routable` can be the target
 3. `Push` function. Here we actually perform the transition to `Target`. Animated property indicates whether the transition should be animated. We have to call the completion once the transition is done.
 4. `Pop` function. Here we perform the transition back to `Source` from `Target`. Animated property indicates whether the transition should be animated. We have to call the completion once the transition is done.
+
+## Path
+
+The actual state of the navigation is incapsulated in a `Path` type. You can think of the `Path` as the URL in the web, although it is more powerful, as it not represented as a string. Path is sequence of `Key` that you defined in the Coordinators.
+
+Here is an example of the `Path`:
+
+```swift
+Path<AppCoordinator.Key>(.routeList).push(RouteCoordinator.Key.addRoute)
+```
+
+Framework provides the the protocol `NavigatableState` that your App State should conform to. Here is an example of the State:
+
+```swift
+struct State: NavigatableState {
+    var counter = 0
+    var path = Path<AppCoordinator.Key>(.logIn)
+}
+```
+
+The state needs to contain the variable with the path. The router will listen to the changes of the `Path` and perform the side effects.
+
+## Router
+
+The actual navigation is done by `NavigationRouter`. You need to initialiaze the `NavigationRouter` with the initial `Coordinator` and the store that contains your state. You can keep in `AppDelegate`, for example.
+
+Here's the example of your `AppDelegate`:
+
+```swift
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    let router = NavigationRouter(AppCoordinator(), store: mainStore)
+}
+```
+
+That's it! You are now ready to use `ReRouter`
