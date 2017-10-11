@@ -99,6 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         router.setupUpdate()
         return true
     }
+}
 ```
 
 That's it! You are now ready to use `ReRouter`
