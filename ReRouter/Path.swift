@@ -38,7 +38,7 @@ public struct Path<Initial: PathIdentifier>: Equatable {
     }
     
     /// Create new path with additional element. Resets isSilent to false. Complexity: O(n)
-    public func push<T: PathIdentifier>(_ id: T, silently: Bool = false) -> Path<Initial> {
+    public func push<T: PathIdentifier>(_ id: T) -> Path<Initial> {
         var new = self
         new.append(id)
         return new
