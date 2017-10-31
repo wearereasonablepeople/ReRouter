@@ -80,7 +80,7 @@
         <!--View Controller-->
         <scene sceneID="DUw-eV-maM">
             <objects>
-                <viewController storyboardIdentifier="push" id="5AQ-t7-8kB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="present" id="5AQ-t7-8kB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Gj-Ng-pGr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
