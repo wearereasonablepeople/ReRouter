@@ -23,5 +23,8 @@ class ListViewController: UITableViewController {
         mainStore.dispatch(action)
     }
     
+    @IBAction func signOutPressed(sender: UIBarButtonItem) {
+        mainStore.dispatch(App.Actions.signOut)
+    }
+    
 }
-
