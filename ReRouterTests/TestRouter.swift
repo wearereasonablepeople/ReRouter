@@ -139,8 +139,8 @@ class TestRouter: XCTestCase {
         router.setupUpdate()
         mainStore.observable.value.path = Path(.other)
         mainStore.observable.value.path = Path(.test).push(Coordinator.Key.other).push(Coordinator.Key.other)
-        mainStore.observable.value.path = mainStore.observable.value.path.dropLast(silently: true)
-        mainStore.observable.value.path = mainStore.observable.value.path.dropLast(silently: true)
+        mainStore.observable.value.path = mainStore.observable.value.path.dropLast().silently()
+        mainStore.observable.value.path = mainStore.observable.value.path.dropLast().silently()
         mainStore.observable.value.path = mainStore.observable.value.path.dropLast()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
