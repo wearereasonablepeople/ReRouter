@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="2046" y="884"/>
         </scene>
-        <!--View Controller-->
+        <!--Presented Controller-->
         <scene sceneID="DUw-eV-maM">
             <objects>
-                <viewController storyboardIdentifier="present" id="5AQ-t7-8kB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="present" id="5AQ-t7-8kB" customClass="PresentedController" customModule="ReRouterDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Gj-Ng-pGr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,11 +78,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyz-pf-182">
+                                <rect key="frame" x="314" y="37" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="dismissButtonPressedWithSender:" destination="5AQ-t7-8kB" eventType="touchUpInside" id="zkv-3K-szC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zyz-pf-182" firstAttribute="top" secondItem="wuK-GG-pGL" secondAttribute="top" constant="17" id="7jE-8e-6Pc"/>
                             <constraint firstItem="5HU-t9-8RB" firstAttribute="centerX" secondItem="6Gj-Ng-pGr" secondAttribute="centerX" id="8wU-BR-MpB"/>
                             <constraint firstItem="5HU-t9-8RB" firstAttribute="centerY" secondItem="6Gj-Ng-pGr" secondAttribute="centerY" id="Pjx-hZ-feR"/>
+                            <constraint firstItem="wuK-GG-pGL" firstAttribute="trailing" secondItem="zyz-pf-182" secondAttribute="trailing" constant="22" id="UXU-Qo-JT0"/>
+                            <constraint firstItem="zyz-pf-182" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Gj-Ng-pGr" secondAttribute="leading" constant="20" symbolic="YES" id="f9p-RB-p6u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wuK-GG-pGL"/>
                     </view>

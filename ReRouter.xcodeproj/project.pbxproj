@@ -39,6 +39,7 @@
 		CE3D08C81FA8C5E6009DA4F4 /* ReRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; };
 		CE3D08C91FA8C5E6009DA4F4 /* ReRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE3D08CD1FA8C667009DA4F4 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */; };
+		CE3D08CF1FA8CB66009DA4F4 /* PresentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */; };
 		CEA2F8F01F66AFF6002C59FF /* ControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		CE3D08BE1FA8C092009DA4F4 /* PushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushController.swift; sourceTree = "<group>"; };
 		CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedController.swift; sourceTree = "<group>"; };
 		CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +238,7 @@
 				CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */,
 				CE3D08A81FA88D27009DA4F4 /* ListViewController.swift */,
 				CE3D08BE1FA8C092009DA4F4 /* PushController.swift */,
+				CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			files = (
 				CE3D08BD1FA89413009DA4F4 /* ListCoordinator.swift in Sources */,
 				CE3D08BB1FA8904E009DA4F4 /* AppCoordinator.swift in Sources */,
+				CE3D08CF1FA8CB66009DA4F4 /* PresentedController.swift in Sources */,
 				CE3D08CD1FA8C667009DA4F4 /* SignInController.swift in Sources */,
 				CE3D08BF1FA8C092009DA4F4 /* PushController.swift in Sources */,
 				CE3D08C71FA8C2AE009DA4F4 /* AppState.swift in Sources */,
