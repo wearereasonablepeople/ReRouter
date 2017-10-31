@@ -9,13 +9,13 @@
 import Foundation
 import ReRouter
 
+let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
 final class AppCoordinator: CoordinatorType {
     enum Key: PathKey {
         case signIn
         case list
     }
-    
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     func item(for key: Key) -> NavigationItem {
         switch key {
@@ -28,7 +28,12 @@ final class AppCoordinator: CoordinatorType {
                 completion()
             })
         case .list:
-            fatalError()
+            return NavigationItem(self, ListCoordinator(), push: { (animated, source, target, completion) in
+                UIApplication.shared.keyWindow?.rootViewController = target.controller
+                completion()
+            }, pop: { (_, _, _, completion) in
+                completion()
+            })
         }
     }
 }
