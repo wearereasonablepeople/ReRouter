@@ -15,6 +15,7 @@ public protocol NavigatableState {
 
 public struct Path<Initial: PathIdentifier>: Equatable {
     public var sequence: [PathIdentifier]
+    public var isSilent = false
     
     public init(_ initial: Initial) {
         sequence = [initial]
@@ -25,26 +26,28 @@ public struct Path<Initial: PathIdentifier>: Equatable {
     }
     
     /// Add path id. Complexity: O(1)
-    public mutating func append<T: PathIdentifier>(_ id: T) {
+    public mutating func append<T: PathIdentifier>(_ id: T, silently: Bool = false) {
         sequence.append(id)
+        isSilent = silently
     }
     
     /// Remove last path id. Complexity: O(1)
-    public mutating func removeLast() {
+    public mutating func removeLast(silently: Bool = false) {
         sequence.removeLast()
+        isSilent = silently
     }
     
     /// Create new path with additional element. Complexity: O(n)
-    public func push<T: PathIdentifier>(_ id: T) -> Path<Initial> {
+    public func push<T: PathIdentifier>(_ id: T, silently: Bool = false) -> Path<Initial> {
         var new = self
-        new.append(id)
+        new.append(id, silently: silently)
         return new
     }
     
     /// Create new path without last element. Complexity: O(n)
-    public func dropLast() -> Path<Initial> {
+    public func dropLast(silently: Bool = false) -> Path<Initial> {
         var new = self
-        new.removeLast()
+        new.removeLast(silently: silently)
         return new
     }
     
