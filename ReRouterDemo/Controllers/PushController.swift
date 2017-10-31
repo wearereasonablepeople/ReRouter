@@ -12,7 +12,7 @@ class PushController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isMovingFromParentViewController {
-            
+            mainStore.dispatch(App.Actions.popController)
         }
     }
 }
