@@ -32,6 +32,9 @@ final class ListCoordinator: ControllerCoordinator {
             return present(target)
         case .alert:
             let alert = UIAlertController(title: "alert", message: "example of alert", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+                mainStore.dispatch(App.Actions.hideController)
+            }))
             return present(alert)
         }
     }

@@ -209,16 +209,32 @@
 			children = (
 				CE3D08A61FA88D27009DA4F4 /* AppDelegate.swift */,
 				CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */,
-				CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */,
-				CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */,
-				CE3D08A81FA88D27009DA4F4 /* ViewController.swift */,
-				CE3D08BE1FA8C092009DA4F4 /* PushController.swift */,
+				CE3D08CA1FA8C62F009DA4F4 /* Coordinators */,
+				CE3D08CB1FA8C63C009DA4F4 /* Controllers */,
 				CE3D08AA1FA88D27009DA4F4 /* Main.storyboard */,
 				CE3D08AD1FA88D27009DA4F4 /* Assets.xcassets */,
 				CE3D08AF1FA88D27009DA4F4 /* LaunchScreen.storyboard */,
 				CE3D08B21FA88D27009DA4F4 /* Info.plist */,
 			);
 			path = ReRouterDemo;
+			sourceTree = "<group>";
+		};
+		CE3D08CA1FA8C62F009DA4F4 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */,
+				CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CE3D08CB1FA8C63C009DA4F4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D08A81FA88D27009DA4F4 /* ViewController.swift */,
+				CE3D08BE1FA8C092009DA4F4 /* PushController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
