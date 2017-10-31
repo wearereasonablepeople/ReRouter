@@ -13,11 +13,13 @@ struct RouteChange<Root: CoordinatorType> {
     let remove: [NavigationItem]
     let add: [NavigationItem]
     let new: RouteHandler<Root>
+    let path: Path<Root.Key>
     
     init(handler: RouteHandler<Root>, old: Path<Root.Key>, new: Path<Root.Key>) {
         let same = old.commonLength(with: new)
         remove = handler.remove(same: same)
         add = handler.add(path: new, same: same)
+        path = new
         self.new = RouteHandler(root: handler.root, items: handler.items[0..<same] + add)
     }
     
@@ -77,8 +79,13 @@ public final class NavigationRouter<Root: CoordinatorType, State: NavigatableSta
             .map({ [unowned self] in RouteChange(handler: self.handler, old: $0.0, new: $0.1) })
             .filter({ $0.isEmpty == false })
             .do(onNext: { [unowned self] in self.handler = $0.new })
-            .map({ $0.toObservables })
-            .flatMap({ Observable.concat($0) })
+            .flatMap({ change -> Observable<Void> in
+                if change.path.isSilent {
+                    return Observable.just(())
+                } else {
+                    return Observable.concat(change.toObservables)
+                }
+            })
             .subscribe()
             .disposed(by: disposeBag)
     }
