@@ -35,6 +35,7 @@
 		CE3D08C11FA8C237009DA4F4 /* ReactiveReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE3D08C31FA8C23A009DA4F4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
 		CE3D08C41FA8C23A009DA4F4 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE3D08C71FA8C2AE009DA4F4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */; };
 		CEA2F8F01F66AFF6002C59FF /* ControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		CE3D08BE1FA8C092009DA4F4 /* PushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushController.swift; sourceTree = "<group>"; };
+		CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				CE3D08A61FA88D27009DA4F4 /* AppDelegate.swift */,
+				CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */,
 				CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */,
 				CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */,
 				CE3D08A81FA88D27009DA4F4 /* ViewController.swift */,
@@ -413,6 +416,7 @@
 				CE3D08BD1FA89413009DA4F4 /* ListCoordinator.swift in Sources */,
 				CE3D08BB1FA8904E009DA4F4 /* AppCoordinator.swift in Sources */,
 				CE3D08BF1FA8C092009DA4F4 /* PushController.swift in Sources */,
+				CE3D08C71FA8C2AE009DA4F4 /* AppState.swift in Sources */,
 				CE3D08A91FA88D27009DA4F4 /* ViewController.swift in Sources */,
 				CE3D08A71FA88D27009DA4F4 /* AppDelegate.swift in Sources */,
 			);
