@@ -23,6 +23,23 @@
 		CE37E31E1F5DA06F0093DA92 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E31D1F5DA06F0093DA92 /* TestRouter.swift */; };
 		CE37E3201F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E31F1F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift */; };
 		CE37E3221F5DCCA50093DA92 /* TestRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37E3211F5DCCA50093DA92 /* TestRoutable.swift */; };
+		CE3D08A71FA88D27009DA4F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08A61FA88D27009DA4F4 /* AppDelegate.swift */; };
+		CE3D08A91FA88D27009DA4F4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08A81FA88D27009DA4F4 /* ListViewController.swift */; };
+		CE3D08AC1FA88D27009DA4F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3D08AA1FA88D27009DA4F4 /* Main.storyboard */; };
+		CE3D08AE1FA88D27009DA4F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3D08AD1FA88D27009DA4F4 /* Assets.xcassets */; };
+		CE3D08B11FA88D27009DA4F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3D08AF1FA88D27009DA4F4 /* LaunchScreen.storyboard */; };
+		CE3D08BB1FA8904E009DA4F4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */; };
+		CE3D08BD1FA89413009DA4F4 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */; };
+		CE3D08BF1FA8C092009DA4F4 /* PushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08BE1FA8C092009DA4F4 /* PushController.swift */; };
+		CE3D08C01FA8C237009DA4F4 /* ReactiveReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; };
+		CE3D08C11FA8C237009DA4F4 /* ReactiveReSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E3091F5D732D0093DA92 /* ReactiveReSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE3D08C31FA8C23A009DA4F4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
+		CE3D08C41FA8C23A009DA4F4 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE3D08C71FA8C2AE009DA4F4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */; };
+		CE3D08C81FA8C5E6009DA4F4 /* ReRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; };
+		CE3D08C91FA8C5E6009DA4F4 /* ReRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE3D08CD1FA8C667009DA4F4 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */; };
+		CE3D08CF1FA8CB66009DA4F4 /* PresentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */; };
 		CEA2F8F01F66AFF6002C59FF /* ControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +51,37 @@
 			remoteGlobalIDString = CE37E2ED1F5D62410093DA92;
 			remoteInfo = ReRouter;
 		};
+		CE3D08B61FA88D33009DA4F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE37E2E51F5D62410093DA92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE3D08A31FA88D27009DA4F4;
+			remoteInfo = ReRouterDemo;
+		};
+		CE3D08B81FA88DE8009DA4F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE37E2E51F5D62410093DA92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE37E2ED1F5D62410093DA92;
+			remoteInfo = ReRouter;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE3D08C21FA8C237009DA4F4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE3D08C41FA8C23A009DA4F4 /* RxSwift.framework in Embed Frameworks */,
+				CE3D08C11FA8C237009DA4F4 /* ReactiveReSwift.framework in Embed Frameworks */,
+				CE3D08C91FA8C5E6009DA4F4 /* ReRouter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE37E2EE1F5D62410093DA92 /* ReRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +101,19 @@
 		CE37E31D1F5DA06F0093DA92 /* TestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
 		CE37E31F1F5DA5040093DA92 /* TestReactiveReSwiftBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReactiveReSwiftBridge.swift; sourceTree = "<group>"; };
 		CE37E3211F5DCCA50093DA92 /* TestRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRoutable.swift; sourceTree = "<group>"; };
+		CE3D08A41FA88D27009DA4F4 /* ReRouterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReRouterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3D08A61FA88D27009DA4F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE3D08A81FA88D27009DA4F4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		CE3D08AB1FA88D27009DA4F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE3D08AD1FA88D27009DA4F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE3D08B01FA88D27009DA4F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE3D08B21FA88D27009DA4F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		CE3D08BE1FA8C092009DA4F4 /* PushController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushController.swift; sourceTree = "<group>"; };
+		CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedController.swift; sourceTree = "<group>"; };
 		CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +137,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE3D08A11FA88D27009DA4F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3D08C31FA8C23A009DA4F4 /* RxSwift.framework in Frameworks */,
+				CE3D08C01FA8C237009DA4F4 /* ReactiveReSwift.framework in Frameworks */,
+				CE3D08C81FA8C5E6009DA4F4 /* ReRouter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +155,7 @@
 			children = (
 				CE37E2F01F5D62410093DA92 /* ReRouter */,
 				CE37E2FB1F5D62410093DA92 /* ReRouterTests */,
+				CE3D08A51FA88D27009DA4F4 /* ReRouterDemo */,
 				CE37E2EF1F5D62410093DA92 /* Products */,
 				CE37E3081F5D732D0093DA92 /* Frameworks */,
 			);
@@ -95,6 +166,7 @@
 			children = (
 				CE37E2EE1F5D62410093DA92 /* ReRouter.framework */,
 				CE37E2F71F5D62410093DA92 /* ReRouterTests.xctest */,
+				CE3D08A41FA88D27009DA4F4 /* ReRouterDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +206,41 @@
 				CE37E30A1F5D732D0093DA92 /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE3D08A51FA88D27009DA4F4 /* ReRouterDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D08A61FA88D27009DA4F4 /* AppDelegate.swift */,
+				CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */,
+				CE3D08CA1FA8C62F009DA4F4 /* Coordinators */,
+				CE3D08CB1FA8C63C009DA4F4 /* Controllers */,
+				CE3D08AA1FA88D27009DA4F4 /* Main.storyboard */,
+				CE3D08AD1FA88D27009DA4F4 /* Assets.xcassets */,
+				CE3D08AF1FA88D27009DA4F4 /* LaunchScreen.storyboard */,
+				CE3D08B21FA88D27009DA4F4 /* Info.plist */,
+			);
+			path = ReRouterDemo;
+			sourceTree = "<group>";
+		};
+		CE3D08CA1FA8C62F009DA4F4 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D08BA1FA8904E009DA4F4 /* AppCoordinator.swift */,
+				CE3D08BC1FA89413009DA4F4 /* ListCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CE3D08CB1FA8C63C009DA4F4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */,
+				CE3D08A81FA88D27009DA4F4 /* ListViewController.swift */,
+				CE3D08BE1FA8C092009DA4F4 /* PushController.swift */,
+				CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +287,32 @@
 			);
 			dependencies = (
 				CE37E2FA1F5D62410093DA92 /* PBXTargetDependency */,
+				CE3D08B71FA88D33009DA4F4 /* PBXTargetDependency */,
 			);
 			name = ReRouterTests;
 			productName = ReRouterTests;
 			productReference = CE37E2F71F5D62410093DA92 /* ReRouterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE3D08A31FA88D27009DA4F4 /* ReRouterDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE3D08B51FA88D27009DA4F4 /* Build configuration list for PBXNativeTarget "ReRouterDemo" */;
+			buildPhases = (
+				CE3D08A01FA88D27009DA4F4 /* Sources */,
+				CE3D08A11FA88D27009DA4F4 /* Frameworks */,
+				CE3D08A21FA88D27009DA4F4 /* Resources */,
+				CE3D08C21FA8C237009DA4F4 /* Embed Frameworks */,
+				CE3D08C51FA8C242009DA4F4 /* Carthage frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE3D08B91FA88DE8009DA4F4 /* PBXTargetDependency */,
+			);
+			name = ReRouterDemo;
+			productName = ReRouterDemo;
+			productReference = CE3D08A41FA88D27009DA4F4 /* ReRouterDemo.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -192,13 +320,13 @@
 		CE37E2E51F5D62410093DA92 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = WeAreReasonablePeople;
 				TargetAttributes = {
 					CE37E2ED1F5D62410093DA92 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VLLVL72AJ4;
+						DevelopmentTeam = 7H6SM4X3H7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -206,6 +334,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = VLLVL72AJ4;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					CE3D08A31FA88D27009DA4F4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						DevelopmentTeam = 7H6SM4X3H7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -216,6 +349,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CE37E2E41F5D62410093DA92;
 			productRefGroup = CE37E2EF1F5D62410093DA92 /* Products */;
@@ -224,6 +358,7 @@
 			targets = (
 				CE37E2ED1F5D62410093DA92 /* ReRouter */,
 				CE37E2F61F5D62410093DA92 /* ReRouterTests */,
+				CE3D08A31FA88D27009DA4F4 /* ReRouterDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -243,7 +378,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE3D08A21FA88D27009DA4F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3D08B11FA88D27009DA4F4 /* LaunchScreen.storyboard in Resources */,
+				CE3D08AE1FA88D27009DA4F4 /* Assets.xcassets in Resources */,
+				CE3D08AC1FA88D27009DA4F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE3D08C51FA8C242009DA4F4 /* Carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveReSwift.framework",
+			);
+			name = "Carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE37E2E91F5D62410093DA92 /* Sources */ = {
@@ -271,6 +435,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE3D08A01FA88D27009DA4F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE3D08BD1FA89413009DA4F4 /* ListCoordinator.swift in Sources */,
+				CE3D08BB1FA8904E009DA4F4 /* AppCoordinator.swift in Sources */,
+				CE3D08CF1FA8CB66009DA4F4 /* PresentedController.swift in Sources */,
+				CE3D08CD1FA8C667009DA4F4 /* SignInController.swift in Sources */,
+				CE3D08BF1FA8C092009DA4F4 /* PushController.swift in Sources */,
+				CE3D08C71FA8C2AE009DA4F4 /* AppState.swift in Sources */,
+				CE3D08A91FA88D27009DA4F4 /* ListViewController.swift in Sources */,
+				CE3D08A71FA88D27009DA4F4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -279,7 +458,36 @@
 			target = CE37E2ED1F5D62410093DA92 /* ReRouter */;
 			targetProxy = CE37E2F91F5D62410093DA92 /* PBXContainerItemProxy */;
 		};
+		CE3D08B71FA88D33009DA4F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE3D08A31FA88D27009DA4F4 /* ReRouterDemo */;
+			targetProxy = CE3D08B61FA88D33009DA4F4 /* PBXContainerItemProxy */;
+		};
+		CE3D08B91FA88DE8009DA4F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE37E2ED1F5D62410093DA92 /* ReRouter */;
+			targetProxy = CE3D08B81FA88DE8009DA4F4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE3D08AA1FA88D27009DA4F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE3D08AB1FA88D27009DA4F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE3D08AF1FA88D27009DA4F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE3D08B01FA88D27009DA4F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CE37E3001F5D62410093DA92 /* Debug */ = {
@@ -400,9 +608,9 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VLLVL72AJ4;
+				DEVELOPMENT_TEAM = 7H6SM4X3H7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -428,9 +636,9 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VLLVL72AJ4;
+				DEVELOPMENT_TEAM = 7H6SM4X3H7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -486,6 +694,56 @@
 			};
 			name = Release;
 		};
+		CE3D08B31FA88D27009DA4F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7H6SM4X3H7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ReRouterDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.violentoctopus.ReRouterDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE3D08B41FA88D27009DA4F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7H6SM4X3H7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ReRouterDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.violentoctopus.ReRouterDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -512,6 +770,15 @@
 			buildConfigurations = (
 				CE37E3061F5D62410093DA92 /* Debug */,
 				CE37E3071F5D62410093DA92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE3D08B51FA88D27009DA4F4 /* Build configuration list for PBXNativeTarget "ReRouterDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE3D08B31FA88D27009DA4F4 /* Debug */,
+				CE3D08B41FA88D27009DA4F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
