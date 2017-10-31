@@ -22,6 +22,7 @@ struct App {
         case presentController
         case showAlert
         case hideController
+        case signIn
         case signOut
     }
     
@@ -40,6 +41,8 @@ struct App {
             state.path.append(ListCoordinator.Key.alert)
         case .hideController:
             state.path.removeLast()
+        case .signIn:
+            state.path = Path(.list)
         case .signOut:
             state.path = Path(.signIn)
         }

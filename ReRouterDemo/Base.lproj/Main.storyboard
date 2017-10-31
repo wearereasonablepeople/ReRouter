@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="484" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In Controller-->
         <scene sceneID="PXq-a3-alA">
             <objects>
-                <viewController storyboardIdentifier="signIn" id="sBU-Cf-eqM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" id="sBU-Cf-eqM" customClass="SignInController" customModule="ReRouterDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="87l-lL-xEk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,6 +36,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaP-VS-XJm">
                                 <rect key="frame" x="163.5" y="318" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInPressedWithSender:" destination="sBU-Cf-eqM" eventType="touchUpInside" id="PCU-LK-ezw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="2040.8" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Push Controller-->
         <scene sceneID="geN-Wa-aVA">
             <objects>
-                <viewController storyboardIdentifier="push" id="8vH-IO-Ddk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="push" id="8vH-IO-Ddk" customClass="PushController" customModule="ReRouterDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qm1-0T-EC7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
