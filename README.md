@@ -9,6 +9,10 @@ Routing with ReactiveReSwift and RxSwift
 
 ReRouter is library that helps you handle the navigation in the app with [ReactiveReSwift](https://github.com/ReSwift/ReactiveReSwift) and [RxSwift](https://github.com/ReactiveX/RxSwift). ReRouter provides a `Path` type that incapsulated the current navigation of the App and whenever the path is changed, the router will perform all the changes automatically.
 
+# Demo
+
+If you are looking for concrete understanding on how to use this library, there is a demo target in the project where you can find some examples on how to create an app with simple navigation flow.
+
 # How to use
 
 There are 3 main components in Router:
