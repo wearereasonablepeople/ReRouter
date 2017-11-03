@@ -36,10 +36,10 @@
 		CE3D08C31FA8C23A009DA4F4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; };
 		CE3D08C41FA8C23A009DA4F4 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E30A1F5D732D0093DA92 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE3D08C71FA8C2AE009DA4F4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08C61FA8C2AE009DA4F4 /* AppState.swift */; };
-		CE3D08C81FA8C5E6009DA4F4 /* ReRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; };
-		CE3D08C91FA8C5E6009DA4F4 /* ReRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE3D08CD1FA8C667009DA4F4 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08CC1FA8C667009DA4F4 /* SignInController.swift */; };
 		CE3D08CF1FA8CB66009DA4F4 /* PresentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D08CE1FA8CB66009DA4F4 /* PresentedController.swift */; };
+		CE60CB211FAC7F1C00C93F84 /* ReRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; };
+		CE60CB221FAC7F1C00C93F84 /* ReRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE37E2EE1F5D62410093DA92 /* ReRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEA2F8F01F66AFF6002C59FF /* ControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2F8EF1F66AFF6002C59FF /* ControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,14 +51,7 @@
 			remoteGlobalIDString = CE37E2ED1F5D62410093DA92;
 			remoteInfo = ReRouter;
 		};
-		CE3D08B61FA88D33009DA4F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE37E2E51F5D62410093DA92 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE3D08A31FA88D27009DA4F4;
-			remoteInfo = ReRouterDemo;
-		};
-		CE3D08B81FA88DE8009DA4F4 /* PBXContainerItemProxy */ = {
+		CE60CB231FAC7F1C00C93F84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE37E2E51F5D62410093DA92 /* Project object */;
 			proxyType = 1;
@@ -76,7 +69,7 @@
 			files = (
 				CE3D08C41FA8C23A009DA4F4 /* RxSwift.framework in Embed Frameworks */,
 				CE3D08C11FA8C237009DA4F4 /* ReactiveReSwift.framework in Embed Frameworks */,
-				CE3D08C91FA8C5E6009DA4F4 /* ReRouter.framework in Embed Frameworks */,
+				CE60CB221FAC7F1C00C93F84 /* ReRouter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,7 +136,7 @@
 			files = (
 				CE3D08C31FA8C23A009DA4F4 /* RxSwift.framework in Frameworks */,
 				CE3D08C01FA8C237009DA4F4 /* ReactiveReSwift.framework in Frameworks */,
-				CE3D08C81FA8C5E6009DA4F4 /* ReRouter.framework in Frameworks */,
+				CE60CB211FAC7F1C00C93F84 /* ReRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +280,6 @@
 			);
 			dependencies = (
 				CE37E2FA1F5D62410093DA92 /* PBXTargetDependency */,
-				CE3D08B71FA88D33009DA4F4 /* PBXTargetDependency */,
 			);
 			name = ReRouterTests;
 			productName = ReRouterTests;
@@ -307,7 +299,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CE3D08B91FA88DE8009DA4F4 /* PBXTargetDependency */,
+				CE60CB241FAC7F1C00C93F84 /* PBXTargetDependency */,
 			);
 			name = ReRouterDemo;
 			productName = ReRouterDemo;
@@ -458,15 +450,10 @@
 			target = CE37E2ED1F5D62410093DA92 /* ReRouter */;
 			targetProxy = CE37E2F91F5D62410093DA92 /* PBXContainerItemProxy */;
 		};
-		CE3D08B71FA88D33009DA4F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE3D08A31FA88D27009DA4F4 /* ReRouterDemo */;
-			targetProxy = CE3D08B61FA88D33009DA4F4 /* PBXContainerItemProxy */;
-		};
-		CE3D08B91FA88DE8009DA4F4 /* PBXTargetDependency */ = {
+		CE60CB241FAC7F1C00C93F84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE37E2ED1F5D62410093DA92 /* ReRouter */;
-			targetProxy = CE3D08B81FA88DE8009DA4F4 /* PBXContainerItemProxy */;
+			targetProxy = CE60CB231FAC7F1C00C93F84 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
