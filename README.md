@@ -21,6 +21,8 @@ There are 3 main components in Router:
 2. [Path](#path)
 3. [Router](#router)
 
+The general flow is the following: You set the new `Path` to the app state, the Router listens to the `Path` changes, generates the difference between two `Paths` and then applys the sequence of navigation side effect, by calling the respective functions in corresponding `Coordinators`
+
 ## Coordinators
 
 The actual navigation is done in coordinators. Coordinator is not a new concept and [here](https://vimeo.com/144116310) is a great introduction to it. In ReReouter Coordinators provide 2 things: enum `Key` which you can think of as a Path Item and a method of how to perform the navigation for a give `Key`.
