@@ -79,10 +79,10 @@ Here is an example of the `Path`:
 Path<AppCoordinator.Key>(.routeList).push(RouteCoordinator.Key.addRoute)
 ```
 
-Framework provides the the protocol `NavigatableState` that your App State should conform to. Here is an example of the State:
+Here is an example of the State:
 
 ```swift
-struct State: NavigatableState {
+struct State {
     var counter = 0
     var path = Path<AppCoordinator.Key>(.logIn)
 }
@@ -92,14 +92,14 @@ The state needs to contain the variable with the path. The router will listen to
 
 ## Router
 
-The actual navigation is done by `NavigationRouter`. You need to initialiaze the `NavigationRouter` with the initial `Coordinator` and the store that contains your state. You can keep in `AppDelegate`, for example.
+The actual navigation is done by `NavigationRouter`. You need to initialiaze the `NavigationRouter` with the initial `Coordinator`, the store that contains your state and the function of how to access the path from your state. You can keep in `AppDelegate`, for example.
 
 Here's the example of your `AppDelegate`:
 
 ```swift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let router = NavigationRouter(AppCoordinator(), store: mainStore)
+    let router = NavigationRouter(AppCoordinator(), store: mainStore, { $0.path })
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         router.setupUpdate()
