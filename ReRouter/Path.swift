@@ -8,11 +8,6 @@
 
 import Foundation
 
-public protocol NavigatableState {
-    associatedtype Initial: PathIdentifier
-    var path: Path<Initial> { get }
-}
-
 public struct Path<Initial: PathIdentifier>: Equatable {
     public var sequence: [PathIdentifier]
     public var isSilent = false

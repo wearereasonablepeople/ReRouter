@@ -61,20 +61,22 @@ struct RouteHandler<Root: CoordinatorType> {
     }
 }
 
-public final class NavigationRouter<Root: CoordinatorType, State: NavigatableState> where Root.Key == State.Initial {
+public final class NavigationRouter<Root: CoordinatorType, State> {
     public let store: Store<Variable<State>>
     let disposeBag = DisposeBag()
+    let toPath: (State) -> Path<Root.Key>
     var handler: RouteHandler<Root>
     
-    public init(_ root: Root, store: Store<Variable<State>>) {
+    public init(_ root: Root, store: Store<Variable<State>>, _ path: @escaping (State) -> Path<Root.Key>) {
         self.store = store
+        toPath = path
         handler = RouteHandler(root: root, items: [])
     }
     
     public func setupUpdate() {
         store.observable
             .asObservable()
-            .map({ $0.path })
+            .map(toPath)
             .scan((Path(), Path()), accumulator: { ($0.1, $1) })
             .map({ [unowned self] in RouteChange(handler: self.handler, old: $0.0, new: $0.1) })
             .filter({ $0.isEmpty == false })

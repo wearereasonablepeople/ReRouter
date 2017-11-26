@@ -126,14 +126,14 @@ class TestRouter: XCTestCase {
     }
     
     func testRouter() {
-        struct State: NavigatableState {
+        struct State {
             var path = Path<Coordinator.Key>(.other)
         }
         
         var result: [String] = []
         let root = Coordinator(id: 1, push: { result.append("push \($2.id)") }, pop: { result.append("pop \($2.id)") })
         let mainStore = Store(reducer: { $1 }, observable: Variable(State()))
-        let router = NavigationRouter(root, store: mainStore)
+        let router = NavigationRouter(root, store: mainStore, { $0.path })
         let successExpectation = expectation(description: "RouteExpectation")
         
         router.setupUpdate()

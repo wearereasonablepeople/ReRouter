@@ -12,7 +12,7 @@ import ReRouter
 import RxSwift
 
 struct App {
-    struct State: NavigatableState {
+    struct State {
         var path = Path<AppCoordinator.Key>(.signIn)
     }
     

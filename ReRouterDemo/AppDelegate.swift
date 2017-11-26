@@ -13,7 +13,7 @@ import ReRouter
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let router = NavigationRouter(AppCoordinator(), store: mainStore)
+    let router = NavigationRouter(AppCoordinator(), store: mainStore, { $0.path })
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         router.setupUpdate()
