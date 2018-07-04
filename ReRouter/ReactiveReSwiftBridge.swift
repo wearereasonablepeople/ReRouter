@@ -11,19 +11,19 @@ import RxSwift
 
 extension Variable: ObservablePropertyType {
     public typealias ValueType = Element
-    public typealias DisposeType = DisposableWrapper
+    public typealias DisposableType = DisposableWrapper
     
-    public func subscribe(_ function: @escaping (Element) -> Void) -> DisposableWrapper? {
-        return DisposableWrapper(disposable: asObservable().subscribe(onNext: function))
+    public func subscribe(_ function: @escaping (ValueType) -> Void) -> DisposableType {
+        return DisposableType(disposable: asObservable().subscribe(onNext: function))
     }
 }
 
 extension Observable: StreamType {
     public typealias ValueType = Element
-    public typealias DisposeType = DisposableWrapper
+    public typealias DisposableType = DisposableWrapper
     
-    public func subscribe(_ function: @escaping (Element) -> Void) -> DisposableWrapper? {
-        return DisposableWrapper(disposable: subscribe(onNext: function))
+    public func subscribe(_ function: @escaping (ValueType) -> Void) -> DisposableWrapper {
+        return DisposableType(disposable: subscribe(onNext: function))
     }
 }
 

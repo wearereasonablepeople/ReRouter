@@ -1,2 +1,2 @@
-github "ReSwift/ReactiveReSwift" "4.0.0"
-github "ReactiveX/RxSwift" "4.0.0"
+github "ReSwift/ReactiveReSwift" "4.1"
+github "ReactiveX/RxSwift" "4.2.0"
